@@ -45,7 +45,7 @@
 @endsection
 
 @section('agent-section')
-    <div class="col-md-3 col-sm-6">
+    <div class="col-md-4 col-sm-6" style>
         <a href="{{url('client/create')}}">
             <div class="widget stats-widget">
                 <div class="widget-body clearfix bg-warning">
@@ -58,7 +58,7 @@
         </a>
 
     </div>
-    <div class="col-md-3 col-sm-6">
+    <div class="col-md-4 col-sm-6">
         <a href="{{url('client')}}">
             <div class="widget stats-widget">
                 <div class="widget-body clearfix bg-primary">
@@ -71,21 +71,7 @@
         </a>
 
     </div>
-    <div class="col-md-3 col-sm-6">
-        <a href="{{url('simulator')}}">
-            <div class="widget stats-widget">
-                <div class="widget-body clearfix bg-purple">
-                    <div class="pull-left">
-                        <h3 class="widget-title text-white">Simulador</h3>
-                    </div>
-                    <span class="pull-right big-icon watermark"><i
-                                class="fa fa-calculator"></i></span>
-                </div>
-            </div><!-- .widget -->
-        </a>
-
-    </div>
-    <div class="col-md-3 col-sm-6">
+    <div class="col-md-4 col-sm-6">
         <a href="{{url('payment')}}">
             <div class="widget stats-widget">
                 <div class="widget-body clearfix bg-success">
@@ -93,58 +79,6 @@
                         <h3 class="widget-title text-white">Registrar pago</h3>
                     </div>
                     <span class="pull-right big-icon watermark"><i class="fa fa-money"></i></span>
-                </div>
-            </div><!-- .widget -->
-        </a>
-
-    </div>
-    <div class="col-md-3 col-sm-6">
-        <a href="{{url('route')}}">
-            <div class="widget stats-widget">
-                <div class="widget-body clearfix bg-deepOrange">
-                    <div class="pull-left">
-                        <h3 class="widget-title text-white">Iniciar Ruta</h3>
-                    </div>
-                    <span class="pull-right big-icon watermark"><i class="fa fa-car"></i></span>
-                </div>
-            </div><!-- .widget -->
-        </a>
-
-    </div>
-    <div class="col-md-3 col-sm-6 hidden">
-        <a href="{{url('history')}}">
-            <div class="widget stats-widget">
-                <div class="widget-body clearfix bg-danger">
-                    <div class="pull-left">
-                        <h3 class="widget-title text-white">Historia cierre</h3>
-                    </div>
-                    <span class="pull-right big-icon watermark"><i class="fa fa-lock"></i></span>
-                </div>
-            </div><!-- .widget -->
-        </a>
-    </div>
-    <div class="col-md-3 col-sm-6">
-        <a href="{{url('transaction')}}">
-            <div class="widget stats-widget">
-                <div class="widget-body clearfix bg-inverse">
-                    <div class="pull-left">
-                        <h3 class="widget-title text-white">Transacciones</h3>
-                    </div>
-                    <span class="pull-right big-icon watermark"><i class="fa fa-list-ol"></i></span>
-                </div>
-            </div><!-- .widget -->
-        </a>
-
-    </div>
-    <div class="col-md-3 col-sm-6">
-        <a href="{{url('bill')}}">
-            <div class="widget stats-widget">
-                <div class="widget-body clearfix bg-pink">
-                    <div class="pull-left">
-                        <h3 class="widget-title text-white">Gastos</h3>
-                    </div>
-                    <span class="pull-right big-icon watermark"><i
-                                class="fa fa-cart-plus"></i></span>
                 </div>
             </div><!-- .widget -->
         </a>
@@ -264,65 +198,7 @@
 
 @endsection
 
-@section('agent-resume')
-    <div class="col-12 pb-2">
-        <small>Los montos siguientes son el total del día actual</small>
-    </div>
-    <div class="col-md-4 col-sm-6">
-        <a href="{{url('client/create')}}">
-            <div class="widget stats-widget widget-resume">
-                <div class="widget-body clearfix h-100 bg-white">
-                    <div class="pull-left">
-                        <h3 class="widget-title text-dark">DISPONIBLE (CAJA)</h3>
-                        <h3 class="widget-title text-dark">
-                            <b>{{$base_agent - $total_bill}}</b>
-                            @if($total_summary>0)
-                                <span>+</span>
-                                <span class=""> {{$total_summary}}</span>
-                                <span class="text-success">= {{($base_agent - $total_bill) + $total_summary}}</span>
-                            @endif
 
-                        </h3>
-                    </div>
-                    <span class="pull-right big-icon text-danger watermark"><i class="fa fa-arrow-down"></i></span>
-                </div>
-            </div><!-- .widget -->
-        </a>
-
-    </div>
-    <div class="col-md-4 col-sm-6">
-        <a href="{{url('transaction')}}">
-            <div class="widget stats-widget widget-resume">
-                <div class="widget-body h-100 clearfix bg-white">
-                    <div class="pull-left">
-                        <h3 class="widget-title text-dark">RECAUDADO</h3>
-                        <h3 class="widget-title text-dark"><b>{{$total_summary}}</b></h3>
-                    </div>
-                    <span class="pull-right big-icon text-success watermark"><i class="fa fa-arrow-up"></i></span>
-                </div>
-            </div><!-- .widget -->
-        </a>
-
-    </div>
-    <div class="col-md-4 col-sm-6">
-        <a href="{{url('bill')}}">
-            <div class="widget stats-widget widget-resume">
-                <div class="widget-body h-100 clearfix bg-white">
-                    <div class="pull-left">
-                        <h3 class="widget-title text-dark">GASTOS</h3>
-                        <h3 class="widget-title text-dark"><b>{{$total_bill}}</b></h3>
-                    </div>
-                    <span class="pull-right big-icon text-warning watermark"><i class="fa fa-arrow-right"></i></span>
-                </div>
-            </div><!-- .widget -->
-        </a>
-
-    </div>
-    <div class="clearfix"></div>
-    <div class="row m-0 d-block col-12 pb-4">
-        <hr>
-    </div>
-@endsection
 
 @section('content')
     <main id="app-main" class="app-main in">
