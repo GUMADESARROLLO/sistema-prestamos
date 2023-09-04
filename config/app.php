@@ -64,7 +64,7 @@ return [
     |
     */
 
-    'timezone' => 'Europe/Madrid',
+    'timezone' => env('APP_TZ', 'America/Managua'),
 
     /*
     |--------------------------------------------------------------------------
